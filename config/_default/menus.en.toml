@@ -1,0 +1,41 @@
+[[main]]
+  identifier = "about"
+  name = "About"
+  url = "about"
+  weight = 1
+
+[[main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "posts"
+  weight = 2
+
+[[main]]
+  identifier = "articles"
+  name = "Articles"
+  url = "articles"
+  weight = 3
+
+[[main]]
+  identifier = "kofi"
+  name = "Buy a Coffee"
+  url = "https://ko-fi.com/dennislwm"
+  weight = 4
+
+[[main]]
+  identifier = "github"
+  name = "GitHub"
+  url = "https://github.com/dennislwm"
+  weight = 5
+    
+[[main]]
+  identifier = "devto"
+  name = "Dev"
+  url = "https://dev.to/dennislwm"
+  weight = 6
+
+[[main]]
+  identifier = "rss"
+  name = "RSS"
+  url = "http://www.feedvalidator.org/check.cgi?url=http%3A//tldr.pro/blog/feed.xml"
+  weight = 7
