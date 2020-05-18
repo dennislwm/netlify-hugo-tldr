@@ -12,7 +12,7 @@ footnoteReturnLinkContents = "^"
     badge = "orange"
     quote = "red"
     # logo = ""
-    portrait = "https://github.com/dennislwm/netlify-hugo-tldr/static/img/coffeebear.png"
+    portrait = "/img/coffeebear.png"
     bio = """
     <p> Since you unexpectedly drop in and I don't want you to go away empty handed. </p>
     <br />
