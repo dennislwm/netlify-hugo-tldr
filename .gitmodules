@@ -3,4 +3,4 @@
 	url = https://github.com/zzossig/hugo-theme-zzo.git
 [submodule "themes/erblog"]
 	path = themes/erblog
-	url = git@github.com:ertuil/erblog
+	url = https://github.com/ertuil/erblog.git
