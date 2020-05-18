@@ -1,0 +1,110 @@
+baseURL = "https://tldrpro.netlify.app/"
+title = "TL;DR"
+theme = "erblog"
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[params]
+    author = "dennislwm"
+    badge = "orange"
+    quote = "red"
+    # logo = ""
+    portrait = "https://github.com/dennislwm/netlify-hugo-tldr/static/img/coffeebear.png"
+    bio = """
+    <p> Since you unexpectedly drop in and I don't want you to go away empty handed. </p>
+    <br />
+    <p> <b>I'm giving my YouTube course away for free.</b> </p>
+    <br />
+    <p> No strings attached. </p>
+    <br />
+    <p> Just do me a favor. Share the love. </p>
+    </p><br /><p>
+    This course is about Coda. No-code.
+    </p><br /><p>
+    Interested? Click <a href="https://www.youtube.com"> here </a> to watch my YouTube course.
+    </p>
+    """
+    # copyright = "Copyright © 2011–2020, Dennis Lee; all rights reserved."
+
+#[[menu.main]]
+#    url = "/zone/"
+#    name = "Zone"
+#    weight = 1
+
+[[menu.main]]
+    url = "/gallery/"
+    name = "Gallery"
+    weight = 2
+
+[[menu.main]]
+    url = "/subscribe/"
+    name = "Subscribe"
+    weight = 2
+    
+[[menu.main]]
+    identifier = "articles"
+    name = "Articles"
+    url = "http://mydevto.tldr.pro"
+    weight = 10
+
+[[menu.main]]
+    identifier = "kofi"
+    name = "Buy a Coffee"
+    url = "https://ko-fi.com/dennislwm"
+    weight = 10
+
+[[menu.main]]
+    identifier = "dev"
+    name = "Dev.to"
+    url = "https://dev.to/dennislwm"
+    weight = 10
+
+# [[menu.main]]
+#     identifier = "zone"
+#     name = "Zone"
+#     url = "/zone/"
+#     weight = 10
+
+[[menu.footer]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 1
+
+[[menu.footer]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+# Social icons to be shown on the right-hand side of the navigation bar
+# The "name" field should match the name of the icon to be used
+# The list of available icons can be found at http://fontawesome.io/icons/
+
+[[menu.icon]]
+    url = "mailto:dennislwm@gmail.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/dennislwm/"
+    name = "github"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://twitter.com/leetradetitan"
+    name = "twitter"
+    weight = 1
+
+[[menu.icon]]
+    url = "http://www.feedvalidator.org/check.cgi?url=http%3A//tldr.pro/blog/feed.xml"
+    name = "rss"
+    weight = 1
