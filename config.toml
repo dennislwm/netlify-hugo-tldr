@@ -110,6 +110,6 @@ series = "series"
     weight = 1
 
 [[menu.icon]]
-    url = "http://www.feedvalidator.org/check.cgi?url=https%3A//dennislwm.netlify.app/post/index.xml"
+    url = "https://validator.w3.org/feed/check.cgi?url=https%3A//dennislwm.netlify.app/post/index.xml"
     name = "rss"
     weight = 1
