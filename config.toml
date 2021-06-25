@@ -1,4 +1,4 @@
-baseURL = "https://tldrpro.netlify.app/"
+baseURL = "https://dennislwm.netlify.app/"
 title = "TL;DR"
 theme = "erblog"
 paginate = 3
@@ -44,11 +44,11 @@ footnoteReturnLinkContents = "^"
     name = "Subscribe"
     weight = 2
     
-[[menu.main]]
-    identifier = "articles"
-    name = "Articles"
-    url = "http://mydevto.tldr.pro"
-    weight = 10
+#[[menu.main]]
+#    identifier = "articles"
+#    name = "Articles"
+#    url = "http://mydevto.tldr.pro"
+#    weight = 10
 
 [[menu.main]]
     identifier = "kofi"
@@ -105,6 +105,11 @@ series = "series"
     weight = 1
 
 [[menu.icon]]
-    url = "http://www.feedvalidator.org/check.cgi?url=http%3A//tldr.pro/blog/feed.xml"
+    url = "https://linkedin.com/in/dennislwm"
+    name = "linkedin"
+    weight = 1
+
+[[menu.icon]]
+    url = "http://www.feedvalidator.org/check.cgi?url=https%3A//dennislwm.netlify.app/post/index.xml"
     name = "rss"
     weight = 1
