@@ -1,7 +1,7 @@
 ---
 author: "Dennis Lee"
 title: "Installing Minikube on Ubuntu with Windows Subsystem Linux Backend"
-date: "Tue, 15 June 2021 12:00:06 +0800"
+date: "Tue, 15 Jun 2021 12:00:06 +0800"
 description: "minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes."
 draft: false
 hideToc: false
