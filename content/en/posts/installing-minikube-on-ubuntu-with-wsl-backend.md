@@ -2,7 +2,8 @@
 author: "Dennis Lee"
 title: "Installing Minikube on Ubuntu with Windows Subsystem Linux Backend"
 date: "Tue, 15 Jun 2021 12:00:06 +0800"
-description: "minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes."
+description: "minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes. 
+Why write an article on installing minikube on Ubuntu with WSL 2 backend? There are two reasons:"
 draft: false
 hideToc: false
 enableToc: true
@@ -14,7 +15,13 @@ tags:
 - wsl
 ---
 
-minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+**minikube** is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+
+Why write an article on installing minikube on **Ubuntu** with **Windows Subsystem Linux** (WSL) 2 backend? There are two reasons:
+
+* the official minikube site has documentation for installing on Windows, Linux, and macOS, but not on Ubuntu with WSL 2 backend.
+
+* compared to the macOS or Linux, the installation process on Ubuntu with WSL 2 backend is not a trivial task.
 
 ## Preparing your Windows 10 machine
 
@@ -27,7 +34,7 @@ What you'll need:
   
 > You can install WSL 2 by following this article [Install WSL on Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
-* Ubuntu 18.04
+* Ubuntu 18.04+
 
 > You can install Ubuntu on WSL 2 by following this article [Ubuntu on WSL 2 Is Generally Available](https://ubuntu.com/blog/ubuntu-on-wsl-2-is-generally-available)
 
@@ -58,15 +65,34 @@ You should see the following output, which you can ignore as we don't have minik
 These changes will take effect upon a minikube delete and then a minikube start
 ```
 
-## Starting minikube
+## Changing permissions
 
 First, change permissions for your `$USER` to the `.minikube` directory.
 
 ```sh
-sudo chown -R $USER $HOME/.minikube; chmod -R u+wrx $HOME/.minikube
+sudo chown -R $USER $HOME/.minikube
+sudo chmod -R u+wrx $HOME/.minikube
 ```
 
-Then, start `minikube` using the following command:
+## Installing package dependencies
+
+Ensure that the following packages are installed.
+
+```sh
+sudo apt-get install -y conntrack
+```
+
+## Deleting previous minikube profiles
+
+Check if an existing profile exists using `sudo minikube profile list`. Delete all existing profiles.
+
+```sh
+sudo minikube delete --purge=true --all=true
+```
+
+## Starting minikube
+
+Finally, start `minikube` using the following command **without** `sudo` privileges:
 
 ```sh
 minikube start --driver=docker --delete-on-failure

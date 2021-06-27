@@ -300,7 +300,7 @@ Compile the above source code, and you should see the **TelegramRecon** EA in th
 
 ![][4]
 
-[4]: http://tldr.pro/blog/blog/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-5---implementing-the-bot-commands.png
+[4]: https://dennislwm.netlify.app/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-5---implementing-the-bot-commands.png
 
 ## Step 3 - Running the MT4 EA for First Time
 
@@ -318,7 +318,7 @@ If you had done every step above correctly, you should see your Bot Name display
 
 ![][2]
 
-[2]: http://tldr.pro/blog/blog/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-3---running-the-mt4-ea-for-first-time.png
+[2]: https://dennislwm.netlify.app/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-3---running-the-mt4-ea-for-first-time.png
 
 ## Step 4 - Building a Bot Query Tool
 
@@ -694,7 +694,7 @@ Type the following code into the above MQ4 file:
 
 ![][3]
 
-[3]: http://tldr.pro/blog/blog/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png
+[3]: https://dennislwm.netlify.app/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png
 
 ## Conclusion
 
