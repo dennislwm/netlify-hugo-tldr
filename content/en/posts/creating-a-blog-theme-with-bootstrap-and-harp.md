@@ -1,13 +1,18 @@
-+++
-author = "Dennis Lee"
-title = "Creating a Blog Theme with Bootstrap and Harp"
-date = "2019-09-26"
-tags = [
-    "harpjs", "bootstrap", "headlessCMS"
-]
-+++
-
-# Creating a Blog Theme with Bootstrap and Harp
+---
+author: "Dennis Lee"
+title: "Creating a Blog Theme with Bootstrap and Harp"
+date: "Mon, 26 Sep 2019 12:00:06 +0800"
+description: "This was a personal project to create a GUI **head** that is modular, which can be developed with any Headless CMS backend."
+draft: false
+hideToc: false
+enableToc: true
+enableTocContent: true
+authorEmoji: 👨
+tags:
+- harpjs
+- bootstrap
+- headlessCMS
+---
 
 This was a personal project to create a GUI **head** that is modular, which can be developed with any "Headless" CMS backend.
 
@@ -31,7 +36,9 @@ The index page dynamically populates all articles' snippets from the *metadata*
 1. Create a folder anywhere on your PC for this project, e.g. "*d:\Theme-source\03blogstrapi*" ["root folder"]
 1. Open the Command ["CMD"] Prompt in the above folder and type this command to create the "*package.json*" file:
 
-     > npm init
+```sh
+npm init
+```
 
 You can leave the default values for each of these entries as below:
 
@@ -52,12 +59,14 @@ These entries will be stored in the "*package.json*" file.
 
 1. Create the following sub-folders in the root folder:
 
-     > mkdir css 
-     > mkdir js
-     > mkdir layout
+```sh
+mkdir css 
+mkdir js
+mkdir layout
+```
 
-1. Download Bootstrap distribution as a ZIP file. URL: [https://getbootstrap.com/docs/4.3/getting-started/download/](https://getbootstrap.com/docs/4.3/getting-started/download/)
-1. Unzip the ZIP file and copy both "*bootstrap.min.css*" and "*bootstrap.min.js*" into their respective folders as shown below.
+2. Download Bootstrap distribution as a ZIP file. URL: [https://getbootstrap.com/docs/4.3/getting-started/download/](https://getbootstrap.com/docs/4.3/getting-started/download/)
+3. Unzip the ZIP file and copy both "*bootstrap.min.css*" and "*bootstrap.min.js*" into their respective folders as shown below.
 
      03blogstrapi/
        |- package.json
@@ -75,7 +84,9 @@ These entries will be stored in the "*package.json*" file.
 
 (1) Ensure that you're in the root folder of the project, then type in the following command:
 
-     > npm install -g harp
+```sh
+npm install -g harp
+```
 
 - Harp: Allows the use of base templates which you can load your body content into them. Any files that has the underscore, e.g. "_header.ejs" will be compiled into another and ignored when the files are copeid into the production directory, i.e. "www".
 
@@ -85,21 +96,25 @@ These entries will be stored in the "*package.json*" file.
 
 (2) Create a file called _harp.json in the root folder and insert the following code:
 
+```json
      {
          "_comment": "global settings and variables that will be used across the entire blog",
          "globals": {
              "siteTitle": "Creating a Blog Theme with Bootstrap and Harp.js"
          }
      }
+```
 
 (3) Create a file named "_data.json" in the root folder and insert the following code:
 
+```json
      {
          "_comment": "template-specific variables and settings; we'll set up one variable for each page template which will hold the name of the page.",
          "index": {
            "pageTitle": "Home"
          }
      }
+```
 
 Your project folder should look like this:
 
@@ -123,6 +138,7 @@ For example, each page will have a title - "pageTitle | siteTitle" - where varia
 
 (2) Type the following code in the above file:
 
+```html
      <!DOCTYPE html> 
      <html lang="en"> 
        <head> 
@@ -150,10 +166,13 @@ For example, each page will have a title - "pageTitle | siteTitle" - where varia
          <script src="js/bootstrap.min.js"></script> 
        </body> 
      </html>
+```
 
 Note: Glyphicon has been dropped from Bootstrap 4, hence we include the free FontAwesome CSS stylesheet in our file "_layout.ejs", after the line below:
 
+```html
          <link rel="stylesheet" href="css/bootstrap.min.css">
+```
 
 Your project folder should look like this:
 
@@ -172,6 +191,7 @@ Your project folder should look like this:
 
 (1) In the sub-folder "layout", create a new file "_header.ejs" and insert the following code:
 
+```html
      <nav class="navbar navbar-expand-md navbar-light bg-faded">
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -193,6 +213,7 @@ Your project folder should look like this:
          </div>
        </div>
      </nav>
+```
 
 Note: In the first line of the header file, the keyword "navbar-expand-md"  will ensure that the navigation menu is listed horizontally, instead of vertically by default.
 
@@ -200,6 +221,7 @@ Note: In the first line of the header file, the keyword "navbar-expand-md"  will
 
 (3) In the sub-folder "layout", create a new file "_footer.ejs" and insert the following code:
 
+```html
      <!-- 
      I'm using the .container class to wrap the entire footer, which will set a max width of 1140 px for the layout. The navbar wasn't placed into a container so it will stretch to the full width of the page. The .container class will also set a left and right padding of .9375rem to the block. It's important to note that Bootstrap 4 uses REMs for the main unit of measure. EMs has been deprecated with the upgrade from version 3. If you're interested in learning more about REMs, you should read this blog post: [http://snook.ca/archives/html_and_css/font-size-with-rem](http://snook.ca/archives/html_and_css/font-size-with-rem) .
      It's also important to note that the column classes have NOT changed from Bootstrap 3 to 4. This is actually a good thing if you are porting over a project, as it will make the migration process much easier. I've set the width of the footer to be the full width of the container by using the .col-lg-12 class.
@@ -212,6 +234,7 @@ Note: In the first line of the header file, the keyword "navbar-expand-md"  will
             </div> 
          </div> 
       </div> 
+```
 
 Your project folder should look like this:
 
@@ -232,6 +255,7 @@ Your project folder should look like this:
 
 (1) In the root folder, create a new file "index.ejs" and insert the following code.
 
+```html
      <div class="container"> 
          <!-- page body //--> 
          <!-- One card per Blog snippet, which is read from the blog/_data.json file -->
@@ -250,6 +274,7 @@ Your project folder should look like this:
          <% }; %>
          <!-- End of One card per Blog snippet -->
      </div> 
+```
 
 Note: Since this file isn't prepended with an underscore, harp will produce a file "index.html".
 
@@ -263,10 +288,13 @@ We can then access each article's metadata, e.g. "public.blog._data[varBlog].pag
 
 (3) Create the following sub-folder in the root folder:
 
-     > mkdir blog
+```sh
+mkdir blog
+```
 
 (4) In the sub-folder "blog", create a new file "_data.json" and copy and paste the following code:
 
+```json
      {
      	"creating-a-blog-theme-with-bootstrap-and-harp": {
      		"pageTitle": "Creating a Blog Theme with Bootstrap and Harp",
@@ -281,6 +309,7 @@ We can then access each article's metadata, e.g. "public.blog._data[varBlog].pag
      		"snippet": "Traversy Media provides a skeleton code for a Custom URL Shortener API, which is automated and hosted locally. Also, it automatically checks to ensure that there are no duplicate long URLs, when inserting a row in the Mongo database."
      	}
      }
+```
 
 For each slug in the above "blog/_data.json" file, we should have a corresponding Markdown file ".md" with the same name. 
 
@@ -315,7 +344,9 @@ Your project folder should look like this:
 
 (1) In the root folder, type the following command:
 
-     > harp compile
+```sh
+harp compile
+```
 
 If everything worked, a new blank line in the terminal will appear. This is good! Otherwise, the compiler will spit out an error. 
 
@@ -323,7 +354,9 @@ If everything worked, a new blank line in the terminal will appear. This is good
 
 (2) Harp has a built-in web server that is backed by Node.js. In your root folder, type the following command:
 
-     > harp server
+```sh
+harp server
+```
 
 (3) You can navigate to the following URL to view it: [http://localhost:9000](http://localhost:9000)
 
@@ -339,13 +372,16 @@ Note: You can specify a different port by using --port parameter, e.g. --port 90
 
 (2) Update the file "_layout.ejs" to include the theme file as follows:
 
+```html
      <!-- Bootstrap CSS first, then MyTheme CSS -->
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
      <link rel="stylesheet" href="css/mytheme.css">
+```
 
 (3) In the sub-folder "css", create a new file "mytheme.css" and insert the following code:
 
+```css
      /* Footer flushed at bottom of page */
      html {
          position: relative;
@@ -369,6 +405,7 @@ Note: You can specify a different port by using --port parameter, e.g. --port 90
          padding-bottom: 50px /* Padding between cards */
      }
      /* End of Cards */
+```
 
 Your project folder should look like this:
 
@@ -401,16 +438,20 @@ The next step is to insert at least a single row of columns. Each container clas
 
 (1) Copy the file "_layout.ejs" from the root folder into the sub-folder "blog" and modify the following code:
 
+```html
      <!-- Change relative path for both CSS and JS files below -->
      <link rel="stylesheet" href="../css/bootstrap.min.css">
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
      <link rel="stylesheet" href="../css/mytheme.css">ner">
+```
 
 (2) Do the same for the JS files:
 
+```js
          <!-- jQuery first, then Bootstrap JS. --> 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
          <script src="../js/bootstrap.min.js"></script> 
+```
 
 This is necessary as the "blog/_layout.ejs" is one level below the root folder, and our references to JS and CSS files are based on the root folder.
 
@@ -420,6 +461,7 @@ Note the contents of ".md" file are accessed using the Harp variable "<%- yield 
 
 (3) Modify the file "blog/_layout.ejs" by replacing the line "<%- yield %>" with:
 
+```html
      <!-- Variable yield outputs the content of each Markdown blog file ".md" wrapped in a Card class -->
      <div class="container"> 
         <div class="row m-t-3"> 
@@ -432,6 +474,7 @@ Note the contents of ".md" file are accessed using the Harp variable "<%- yield 
            </div> 
        </div> 
      </div>     
+```
 
 Unlike "index.ejs", we cannot modify any of the Markdown files "*.md", hence our HTML code has to be contained within the "blog/_layout.ejs".
 

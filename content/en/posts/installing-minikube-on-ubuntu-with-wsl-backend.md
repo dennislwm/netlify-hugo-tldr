@@ -1,13 +1,18 @@
-+++
-author = "Dennis Lee"
-title = "Installing Minikube on Ubuntu with WSL 2 Backend"
-date = "2021-06-15"
-tags = [
-    "minikube", "kubernetes", "wsl"
-]
-+++
-
-# Installing minikube on Ubuntu with Windows Subsystem Linux Backend
+---
+author: "Dennis Lee"
+title: "Installing Minikube on Ubuntu with Windows Subsystem Linux Backend"
+date: "Tue, 15 June 2021 12:00:06 +0800"
+description: "minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes."
+draft: false
+hideToc: false
+enableToc: true
+enableTocContent: true
+authorEmoji: 👨
+tags:
+- minikube
+- kubernetes
+- wsl
+---
 
 minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
 
@@ -34,21 +39,22 @@ What you'll need:
 
 Download and install the latest minikube package for Ubuntu.
 
-```
+```sh
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 sudo dpkg -i minikube_latest_amd64.deb
 ```
+
 ## Configuring VM driver
 
 As we're on a virtual machine, we should set VM driver to none, as we cannot virtualize on virtualization.
 
-```
+```sh
 sudo minikube config set vm-driver none
 ```
 
 You should see the following output, which you can ignore as we don't have minikube running yet.
 
-```
+```sh
 These changes will take effect upon a minikube delete and then a minikube start
 ```
 
@@ -56,13 +62,13 @@ These changes will take effect upon a minikube delete and then a minikube start
 
 First, change permissions for your `$USER` to the `.minikube` directory.
 
-```
+```sh
 sudo chown -R $USER $HOME/.minikube; chmod -R u+wrx $HOME/.minikube
 ```
 
 Then, start `minikube` using the following command:
 
-```
+```sh
 minikube start --driver=docker --delete-on-failure
 ```
 
@@ -70,7 +76,7 @@ _Warning: The option `--driver=none` should not be used in Windows._
 
 A successful output should have the following:
 
-```
+```sh
 😄  minikube v1.20.0 on Ubuntu 18.04
 ✨  Using the docker driver based on user configuration
 👍  Starting control plane node minikube in cluster minikube
@@ -94,19 +100,19 @@ A successful output should have the following:
 
 1. If you get the following error on `sudo minikube start`:
 
-```
+```sh
 Exiting due to GUEST_MISSING_CONNTRACK: Sorry, Kubernetes 1.20.2 requires conntrack to be installed in root's path
 ```
 
 The following command should resolve the above issue:
 
-```
+```sh
 sudo apt-get install -y conntrack
 ```
 
 2. If you get the following error on `sudo minikube start --driver=docker`:
 
-```
+```sh
 Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
 ```
 
@@ -114,24 +120,24 @@ You should perform `minikube start --driver=docker` without `sudo` privilege.
 
 3. If you get the following error on `minikube start --driver=docker`:
 
-```
+```sh
 Exiting due to HOST_HOME_PERMISSION: Failed to save config: open /home/dennislwm/.minikube/profiles/minikube/config.json: permission denied
 ```
 
 The following command should resolve the above issue:
 
-```
+```sh
 sudo chown -R $USER $HOME/.minikube; chmod -R u+wrx $HOME/.minikube
 ```
 
 4. If you get the following error on `sudo minikube start --driver=docker`:
 
-```
+```sh
 Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "none" driver, which is incompatible with requested "docker" driver.
 ```
 
 Check if an existing profile exists using `sudo minikube profile list`. The following command should resolve the above issue:
 
-```
+```sh
 sudo minikube delete --purge=true --all=true
 ```
