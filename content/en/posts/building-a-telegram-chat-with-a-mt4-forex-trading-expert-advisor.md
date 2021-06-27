@@ -298,7 +298,7 @@ Otherwise, if the value of **intResult** is zero (success), then we display the 
 
 Compile the above source code, and you should see the **TelegramRecon** EA in the Navigator under the Expert Advisors tab.
 
-{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-2---creating-a-new-mt4-expert-advisor.png" title="" alt="creating-a-new-mt4-expert-advisor" position="center" >}}
+[{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-2---creating-a-new-mt4-expert-advisor.png" title="" alt="creating-a-new-mt4-expert-advisor" position="center" >}}]
 
 ## Step 3 - Running the MT4 EA for First Time
 
@@ -314,7 +314,7 @@ Next, attach the EA to any chart, and in the Input dialog window, enter your uni
 
 If you had done every step above correctly, you should see your Bot Name displayed on the chart.
 
-{{< img src/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-3---running-the-mt4-ea-for-first-time.png" title="" alt="running-the-mt4-ea-for-first-time" position="center" >}}
+[{{< img src/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-3---running-the-mt4-ea-for-first-time.png" title="" alt="running-the-mt4-ea-for-first-time" position="center" >}}]
 
 ## Step 4 - Building a Bot Query Tool
 
@@ -529,7 +529,7 @@ Compile and attach the EA to any chart, and in the Input dialog window, enter yo
 
 Open your Telegram app and send a message "/help" to your Telegram Bot. You should get the following response:
 
-{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png" title="" alt="building-a-bot-query-tool" position="center" >}}
+[{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png" title="" alt="building-a-bot-query-tool" position="center" >}}]
 
 ## Step 5 - Implementing the Bot Commands
 
@@ -688,7 +688,7 @@ Type the following code into the above MQ4 file:
      }
 ```
 
-{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-5---implementing-the-bot-commands.png" title="" alt="implementing-the-bot-commands" position="center" >}}
+[{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-5---implementing-the-bot-commands.png" title="" alt="implementing-the-bot-commands" position="center" >}}]
 
 ## Conclusion
 
