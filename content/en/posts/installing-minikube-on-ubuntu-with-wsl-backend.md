@@ -167,3 +167,15 @@ Check if an existing profile exists using `sudo minikube profile list`. The foll
 ```sh
 sudo minikube delete --purge=true --all=true
 ```
+
+* * *
+
+**Was this article useful? Help us to improve!**
+
+_With your feedback, we can improve the newsletter. Click on a link to vote: 🗳️_
+
+* [👍 Thanks - this issue helped me.](https://feedletter.co/feedback/give/1/98147649-0679-4569-9815-2460979f69be) 
+* [😐 Meh - was ok.](https://feedletter.co/feedback/give/2/98147649-0679-4569-9815-2460979f69be)
+* [👎 Not interesting to me.](https://feedletter.co/feedback/give/3/98147649-0679-4569-9815-2460979f69be)
+
+[![Buy Me A Coffee donate button](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/dennislwm "Donate to this project using Buy Me A Coffee")

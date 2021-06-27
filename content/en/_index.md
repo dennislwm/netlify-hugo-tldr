@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - Makerwork
+      - Dennis Lee
     subtitle:
-      - A free curated newsletter about makers for makers.
+      - Cloud Support and DevOps Engineer
     titleColor: 
     titleShadow: true
     titleFontSize: 44
