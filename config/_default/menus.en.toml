@@ -1,0 +1,38 @@
+[[main]]
+  identifier = "about"
+  name = "About"
+  url = "about"
+  weight = 1
+
+[[main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "archive"
+  weight = 2
+
+[[main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "posts"
+  weight = 5
+
+[[main]]
+  identifier = "buyacoffee"
+  name = "Buy a Coffee ☕"
+  url = "https://ko-fi.com/dennislwm"
+  weight = 8
+
+[[main]]
+  identifier = "rss"
+  name = "RSS"
+  weight = 9
+    
+[[main]]
+  parent = "rss"
+  name = "Summary"
+  url = "index.xml"
+
+[[main]]
+  parent = "rss"
+  name = "Content"
+  url = "posts/index.xml"
