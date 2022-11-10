@@ -62,8 +62,8 @@ whoami = "Cloud Support and DevOps Engineer"
 bioImageUrl = ""
 useGravatar = false
 location = "Singapore"
-organization = "Adera Global"
-link = "https://aderaglobal.com"
+organization = "IBM"
+link = "https://ibm.com"
 
 # sidebar
 enableBio = true
