@@ -533,7 +533,9 @@ Compile and attach the EA to any chart, and in the Input dialog window, enter yo
 
 Open your Telegram app and send a message "/help" to your Telegram Bot. You should get the following response:
 
-{{< img src="/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png" title="" alt="building-a-bot-query-tool" position="center" >}}
+![][1]
+
+[1]: https://dennislwm.netlify.app/images/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor/step-4---building-a-bot-query-tool.png
 
 ## Step 5 - Implementing the Bot Commands
 
