@@ -8,6 +8,10 @@ hideToc: false
 enableToc: true
 enableTocContent: true
 authorEmoji: 👨
+tags:
+- youtube
+- ai
+- videoapi
 ---
 
 <!-- TOC depthfrom:2 -->
