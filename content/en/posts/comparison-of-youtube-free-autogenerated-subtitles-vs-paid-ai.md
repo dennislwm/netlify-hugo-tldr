@@ -21,9 +21,6 @@ authorEmoji: 👨
 - [Get the Source Code](#get-the-source-code)
 - [What To Do Next](#what-to-do-next)
 
-<!-- /TOC -->ce Code](#get-the-source-code)
-- [What To Do Next](#what-to-do-next)
-
 <!-- /TOC -->
 
 ---
