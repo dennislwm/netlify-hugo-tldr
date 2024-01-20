@@ -1,7 +1,7 @@
 ---
 author: "{{ .Site.Param "myname" }}"
 title: "{{ replace .Name "-" " " | title }}"
-date: "{{ strings.SliceString time.Now.Weekday.String 0 3 }}, {{ time.Now.Day }} {{ strings.SliceString time.Now.Month.String 0 3 }} {{ time.Now.Year }} {{ time.Now.Hour }}:{{ time.Now.Minute }}:{{ time.Now.Second }} +0800"
+date: "{{ strings.SliceString time.Now.Weekday.String 0 3 }}, {{ time.Now.Day }} {{ strings.SliceString time.Now.Month.String 0 3 }} {{ time.Now.Year }} 12:00:06 +0800"
 description: "{{ replace .Name "-" " " | title }}"
 draft: true
 hideToc: false
@@ -18,10 +18,7 @@ authorEmoji: 👨
 - [Get the Source Code](#get-the-source-code)
 - [What To Do Next](#what-to-do-next)
 
-<!-- /TOC -->
-
----
-## Introduction
+<!-- /TOC -->on
 
 ---
 ## TL;DR
