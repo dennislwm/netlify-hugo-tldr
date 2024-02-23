@@ -68,7 +68,7 @@ A typical workflow for a CI/CD pipeline is to make some changes to your reposito
 
 We can extend this CI/CD pipeline by creating a webhook that listens for a Telegram bot command to start a chain of events, which includes automating the CI/CD pipeline. The result of the pipeline may then be returned to the Telegram bot.
 
-![Overview](../../../static/images/look-mum-no-servers/GitHub-Actions-Telegram-Bot.png)
+![Overview](https://dennislwm.netlify.app/images/look-mum-no-servers/GitHub-Actions-Telegram-Bot.png)
 
 In this article, you'll have a bit of fun by creating a Telegram Bot to automate solving a sudoku puzzle and returning the result.
 
@@ -80,7 +80,7 @@ You'll send a command (prefix with a `/`) to the Telegram Bot. For example:
 
 This triggers a chain of events, which includes automating the GitHub Actions pipeline, and the result is a text message reply that contains the solved puzzle.
 
-![Sudoku result](../../../static/images/look-mum-no-servers/Sudoku-result.jpeg)
+![Sudoku result](https://dennislwm.netlify.app/images/look-mum-no-servers/Sudoku-result.jpeg)
 
 ---
 ## Deep dive into the GitHub Actions Configuration
@@ -104,7 +104,7 @@ To create a GitHub Actions pipeline, we have to specify:
 
 Let's look at an example.
 
-![GitHub Actions Config File](../../../static/images/look-mum-no-servers/GitHub-Actions-Config-File.png)
+![GitHub Actions Config File](https://dennislwm.netlify.app/images/look-mum-no-servers/GitHub-Actions-Config-File.png)
 
 We name the GitHub Actions `Python application`, and it will trigger on each `push` to the `master` branch.
 
@@ -156,7 +156,7 @@ Now to test your first action, open your Telegram app and send a command from yo
 /solve 600009130700000090209500004926345000800006340473001000197004603302007000508900007
 ```
 
-![New Bot Command Received (Instant) from Telegram Bot](../../../static/images/look-mum-no-servers/New-Bot-Command-Received-from-Telegram-Bot.png)
+![New Bot Command Received (Instant) from Telegram Bot](https://dennislwm.netlify.app/images/look-mum-no-servers/New-Bot-Command-Received-from-Telegram-Bot.png)
 
 ### Step 2. Create or Update File Contents in a GitHub Repository.
 
@@ -172,7 +172,7 @@ Now that you have created a trigger, let's create some actions.
 6. In Path, enter `examples/puzzle.txt`.
 7. In File content, enter `{{steps.code.puzzle}}`.
 
-![Create or update file contents](../../../static/images/look-mum-no-servers/Create-or-update-file-contents.png)
+![Create or update file contents](https://dennislwm.netlify.app/images/look-mum-no-servers/Create-or-update-file-contents.png)
 
 ### Step 3. Workflow Delay.
 
@@ -183,7 +183,7 @@ As the GitHub Actions pipeline may take some time to execute, you will need to s
 3. In Duration to delay (value), enter `35`.
 4. In Duration to delay (unit), enter `seconds`.
 
-![Workflow delay](../../../static/images/look-mum-no-servers/Workflow-delay.png)
+![Workflow delay](https://dennislwm.netlify.app/images/look-mum-no-servers/Workflow-delay.png)
 
 ### Step 4. Get File Contents from a GitHub Repository.
 
@@ -195,7 +195,7 @@ The next step is to get the result from the repository.
 4. Click Repository, search for and select **sudoku-cli**.
 5. In Path, enter `examples/result.txt`.
 
-![Get repository content](../../../static/images/look-mum-no-servers/Get-repository-content.png)
+![Get repository content](https://dennislwm.netlify.app/images/look-mum-no-servers/Get-repository-content.png)
 
 ### Step 5. Send Text Message or Reply to Telegram Bot.
 
@@ -208,7 +208,7 @@ The final step is to send a text message to your Telegram bot.
 5. In Path, enter `{{steps.trigger.event.message.chat.id}}`.
 6. In Text, enter `{{steps.base64_decode_string.data}}`.
 
-![Final step](../../../static/images/look-mum-no-servers/Send-text-message-or-reply.png)
+![Final step](https://dennislwm.netlify.app/images/look-mum-no-servers/Send-text-message-or-reply.png)
 
 ---
 ## Conclusion
