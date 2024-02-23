@@ -1,13 +1,17 @@
 ---
 author: "Dennis Lee 👨"
-title: "Look Mum, No Servers!"
-date: "Fri, 16 Feb 2024 12:00:06 +0800"
-description: "Look Mum, No Servers!: A Telegram bot to communicate with GitHub Actions"
-draft: true
+title: "Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions"
+date: "Fri, 23 Feb 2024 12:00:06 +0800"
+description: "Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions"
+draft: false
 hideToc: false
 enableToc: true
 enableTocContent: true
 authorEmoji: 👨
+tags:
+- tutorial
+- githubactions
+- bot
 ---
 
 <!-- TOC depthfrom:2 -->
@@ -85,7 +89,31 @@ This triggers a chain of events, which includes automating the GitHub Actions pi
 
 Before diving into configuring the workflow, let's take a peek at how the GitHub Actions configuration works.
 
+To create a GitHub Actions pipeline, we have to specify:
+
+* Name of the GitHub Actions `name`.
+* Type of trigger events `on`.
+* An array of jobs `jobs`.
+  * A base image `runs-on`.
+  * An array of steps `steps`.
+    * Checkout git repo.
+    * Set up Python.
+    * Install dependencies.
+    * Run tests.
+    * Run application.
+
+Let's look at an example.
+
 ![GitHub Actions Config File](../../../static/images/look-mum-no-servers/GitHub-Actions-Config-File.png)
+
+We name the GitHub Actions `Python application`, and it will trigger on each `push` to the `master` branch.
+
+There is one job `build` using the base image `ubuntu-latest` that runs each of the steps listed above.
+* The first step checks out the git repository, with a minimum commit history of `fetch-depth`.
+* The second and third steps install `Python 3.9` and the dependencies in `requirements.txt`.
+* The fourth and fifth steps run the unit tests and application.
+
+For the final step, the command `sudoku` reads the file `examples/puzzle.txt` containing a PUZZLE_STRING. The return output string is then piped through a series of formatting commands using `sed` and `awk` and into the file `examples/result.txt`. The `result.txt` file is compared to the last commit and a new commit is created only if there is a change in the file.
 
 ---
 ## Steps to Configure Your Pipedream Workflow
@@ -184,6 +212,8 @@ The final step is to send a text message to your Telegram bot.
 
 ---
 ## Conclusion
+
+In this aarticle, you created a GitHub Actions to run a Python application `sudoku` that accepts a file containing a PUZZLE_STRING, and returns the result in an output file `result.txt`. You then created a Pipedream workflow that listens to your Telegram Bot for a given command `/solve PUZZLE_STRING` that starts a chain of events, which includes automating the CI/CD pipeline. The workflow then replies to your Telegram Bot with the contents of the file `result.txt`.
 
 ---
 ## Get the Source Code
