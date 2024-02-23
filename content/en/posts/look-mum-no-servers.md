@@ -17,16 +17,16 @@ tags:
 <!-- TOC depthfrom:2 -->
 
 - [TL;DR](#tldr)
-- [Prerequisites](#prerequisites)
-  - [How to Create a New Telegram Bot](#how-to-create-a-new-telegram-bot)
+- [Essentials First](#essentials-first)
+  - [Crafting Your Telegram Bot](#crafting-your-telegram-bot)
 - [From DevOps to BotOps](#from-devops-to-botops)
 - [Deep dive into the GitHub Actions Configuration](#deep-dive-into-the-github-actions-configuration)
 - [Steps to Configure Your Pipedream Workflow](#steps-to-configure-your-pipedream-workflow)
-  - [Step 1. Listen for Commmand from Telegram Bot Trigger.](#step-1-listen-for-commmand-from-telegram-bot-trigger)
-  - [Step 2. Create or Update File Contents in a GitHub Repository.](#step-2-create-or-update-file-contents-in-a-github-repository)
-  - [Step 3. Workflow Delay.](#step-3-workflow-delay)
-  - [Step 4. Get File Contents from a GitHub Repository.](#step-4-get-file-contents-from-a-github-repository)
-  - [Step 5. Send Text Message or Reply to Telegram Bot.](#step-5-send-text-message-or-reply-to-telegram-bot)
+  - [Step 1. **Command Reception**: Set up a trigger for Telegram bot commands.](#step-1-command-reception-set-up-a-trigger-for-telegram-bot-commands)
+  - [Step 2. **GitHub Interaction**: Automate file updates in your repository.](#step-2-github-interaction-automate-file-updates-in-your-repository)
+  - [Step 3. **Delay for Action Completion**: Ensure synchronization with GitHub Actions.](#step-3-delay-for-action-completion-ensure-synchronization-with-github-actions)
+  - [Step 4. **Results Retrieval**: Fetch the solved puzzle from the repository.](#step-4-results-retrieval-fetch-the-solved-puzzle-from-the-repository)
+  - [Step 5. **Notification**: Inform the user about the solution directly through Telegram.](#step-5-notification-inform-the-user-about-the-solution-directly-through-telegram)
 - [Conclusion](#conclusion)
 - [Get the Source Code](#get-the-source-code)
 - [What To Do Next](#what-to-do-next)
@@ -45,24 +45,24 @@ And if you're a serious developer or engineer, you can create your own Telegram 
 GitHub-Actions-Telegram-Bot is a Telegram bot that allow you to communicate with a GitHub Actions pipeline that may return an output message.
 
 ---
-## Prerequisites
+## Essentials First
 
-You'll need to create an account (no credit card required):
-1. [Telegram](https://telegram.org)
-2. [GitHub](https://github.com)
-3. [Pipedream](https://pipedream.com)
+Gear up by setting up accounts on (no credit card required):
+1. [Telegram](https://telegram.org) for instant messaging automation.
+2. [GitHub](https://github.com) for repository management and actions.
+3. [Pipedream](https://pipedream.com) for connecting apps and automating workflows.
 
 ---
-### How to Create a New Telegram Bot
+### Crafting Your Telegram Bot
 
 My previous article [Building a Telegram Chat with a MT4 Forex Trading Expert Advisor](https://dev.to/dennislwm/building-a-telegram-chat-with-a-mt4-forex-trading-expert-advisor-4p35) contains a prerequisite tutorial on [How to Create a New Telegram Bot](https://github.com/dennislwm/MT4-Telegram-Bot-Recon).
 
-It is also worth checking out if you are a serious crypto or forex trader.
+It's a goldmine for those into crypto or forex trading too.
 
 ---
 ## From DevOps to BotOps
 
-A [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
+[GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions), a powerhouse for CI/CD, lets you automate builds, tests, and deployments. Integrating it with a Telegram Bot creates a dynamic duo for automating workflows beyond the traditional scope.
 
 A typical workflow for a CI/CD pipeline is to make some changes to your repository files, then add and commit these file changes. The pipeline may trigger on a `push`, or any event types, that you have defined in a GitHub Actions config file.
 
@@ -85,7 +85,7 @@ This triggers a chain of events, which includes automating the GitHub Actions pi
 ---
 ## Deep dive into the GitHub Actions Configuration
 
-> TL;DR: If you want to save time, you can [fork the source code](#get-the-source-code) from my GitHub repository.
+> TL;DR: You can [fork the source code](#get-the-source-code) from my GitHub repository for a head start.
 
 Before diving into configuring the workflow, let's take a peek at how the GitHub Actions configuration works.
 
@@ -118,16 +118,16 @@ For the final step, the command `sudoku` reads the file `examples/puzzle.txt` co
 ---
 ## Steps to Configure Your Pipedream Workflow
 
-> TL;DR: If you want to save time, you can [copy the configuration](#get-the-source-code) from my Pipedream workflow.
+> TL;DR: You can [copy the configuration](#get-the-source-code) from my Pipedream workflow for swift integration.
 
 In order to create a webhook that listens for your Telegram bot commands, and starts a chain of events, which includes automating the CI/CD pipeline, you'll need to create a workflow in [Pipedream](http://pipedream.com).
 
 At a helicopter view, the steps to configure are as follows:
-* Step 1. Listen for Commmand from Telegram Bot (Trigger).
-* Step 2. Create or Update File Contents in a GitHub Repository.
-* Step 3. Workflow Delay.
-* Step 4. Get File Contents from a GitHub Repository.
-* Step 5. Send Text Message or Reply to Telegram Bot.
+* Step 1. **Command Reception**: Set up a trigger for Telegram bot commands.
+* Step 2. **GitHub Interaction**: Automate file updates in your repository.
+* Step 3. **Delay for Action Completion**: Ensure synchronization with GitHub Actions.
+* Step 4. **Results Retrieval**: Fetch the solved puzzle from the repository.
+* Step 5. **Notification**: Inform the user about the solution directly through Telegram.
 
 Your TELEGRAM_BOT_TOKEN that you created in the [previous](#how-to-create-a-new-telegram-bot) section will come in handy here.
 
@@ -138,7 +138,7 @@ Your TELEGRAM_BOT_TOKEN that you created in the [previous](#how-to-create-a-new-
 5. Click on New > Workflow, and name the workflow **Sudoku-Actions**.
 6. Click Create Workflow, and your workflow should appear under Resources.
 
-### Step 1. Listen for Commmand from Telegram Bot (Trigger).
+### Step 1. **Command Reception**: Set up a trigger for Telegram bot commands.
 
 Now that you have created a workflow, let's create a trigger.
 
@@ -158,7 +158,7 @@ Now to test your first action, open your Telegram app and send a command from yo
 
 ![New Bot Command Received (Instant) from Telegram Bot](https://dennislwm.netlify.app/images/look-mum-no-servers/New-Bot-Command-Received-from-Telegram-Bot.png)
 
-### Step 2. Create or Update File Contents in a GitHub Repository.
+### Step 2. **GitHub Interaction**: Automate file updates in your repository.
 
 Now that you have created a trigger, let's create some actions.
 
@@ -174,7 +174,7 @@ Now that you have created a trigger, let's create some actions.
 
 ![Create or update file contents](https://dennislwm.netlify.app/images/look-mum-no-servers/Create-or-update-file-contents.png)
 
-### Step 3. Workflow Delay.
+### Step 3. **Delay for Action Completion**: Ensure synchronization with GitHub Actions.
 
 As the GitHub Actions pipeline may take some time to execute, you will need to set a fixed period of delay in your workflow.
 
@@ -185,7 +185,7 @@ As the GitHub Actions pipeline may take some time to execute, you will need to s
 
 ![Workflow delay](https://dennislwm.netlify.app/images/look-mum-no-servers/Workflow-delay.png)
 
-### Step 4. Get File Contents from a GitHub Repository.
+### Step 4. **Results Retrieval**: Fetch the solved puzzle from the repository.
 
 The next step is to get the result from the repository.
 
@@ -197,7 +197,7 @@ The next step is to get the result from the repository.
 
 ![Get repository content](https://dennislwm.netlify.app/images/look-mum-no-servers/Get-repository-content.png)
 
-### Step 5. Send Text Message or Reply to Telegram Bot.
+### Step 5. **Notification**: Inform the user about the solution directly through Telegram.
 
 The final step is to send a text message to your Telegram bot.
 
@@ -213,7 +213,9 @@ The final step is to send a text message to your Telegram bot.
 ---
 ## Conclusion
 
-In this aarticle, you created a GitHub Actions to run a Python application `sudoku` that accepts a file containing a PUZZLE_STRING, and returns the result in an output file `result.txt`. You then created a Pipedream workflow that listens to your Telegram Bot for a given command `/solve PUZZLE_STRING` that starts a chain of events, which includes automating the CI/CD pipeline. The workflow then replies to your Telegram Bot with the contents of the file `result.txt`.
+In this article, you created a GitHub Actions to run a Python application `sudoku` that accepts a file containing a PUZZLE_STRING, and returns the result in an output file `result.txt`. You then created a Pipedream workflow that listens to your Telegram Bot for a given command `/solve PUZZLE_STRING` that starts a chain of events, which includes automating the CI/CD pipeline. The workflow then replies to your Telegram Bot with the contents of the file `result.txt`. 
+
+By creating a bot that automates tasks and streamlines workflows, you've taken a significant step towards adopting modern DevOps practices.
 
 ---
 ## Get the Source Code
@@ -225,10 +227,12 @@ You can download the above source code from my GitHub repository [dennislwm/sudo
 ---
 ## What To Do Next
 
-You can further extend your code or configuration in several meaningful ways:
+You can elevate your bot's capabilities by:
 
-1. Reduce wait time - Instead of a using a workflow delay step in the Pipeline configuration, you may replace this step with sending the results directly from the GitHub Actions pipeline to your Telegram bot.
-2. Add a new command - You can add new commands and actions to your Telegram bot to perform other tasks, such as transcribe a YouTube video, check next T-Bills auction dates, etc.
+1. **Minimizing Wait Times**: Streamline results delivery by integrating direct feedback mechanisms from GitHub Actions to your Telegram bot.
+2. **Expanding Functionality**: You can enrich your bot with new commands for diverse tasks, such as transcribe a YouTube video, check next T-Bills auction dates, etc.
+
+Embrace this journey to automate and innovate, shaping the future of how we interact with technology.
 
 * * *
 
