@@ -2,7 +2,7 @@
 author: "Dennis Lee 👨"
 title: "Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions"
 date: "Fri, 23 Feb 2024 12:00:06 +0800"
-description: "Look Mum, No Servers! Create a Telegram Bot to communicate with GitHub Actions"
+description: "Discover how Telegram extends beyond messaging to revolutionize your workflow automation. This guide introduces creating a Telegram Bot to not only streamline dialogues but also to manage servers, automate tasks, and enhance your development operations with GitHub Actions."
 draft: false
 hideToc: false
 enableToc: true
